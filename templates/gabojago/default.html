@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Map</title>
+</head>
+<body>
+   <h2>gabojago Map</h2>
+   <div id="map" style="width: 800px; height: 600px;"></div>
+   <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=fd029dacfb09924877e17f04135de8bc"></script>
+   <script>
+		var container = document.getElementById('map');
+		var options = {
+			center: new kakao.maps.LatLng(37.321654, 127.126176),
+			level: 3
+		};
+
+		var map = new kakao.maps.Map(container, options);
+
+        function setCenter() {
+          // 이동할 위도 경도 위치를 생성합니다
+          var moveLatLon = new kakao.maps.LatLng(37.320000, 127.120000);
+
+          // 지도 중심을 이동 시킵니다
+          map.setCenter(moveLatLon);
+        }
+
+        function panTo() {
+            // 이동할 위도 경도 위치를 생성합니다
+            var moveLatLon = new kakao.maps.LatLng(37.320654, 127.120176);
+
+            // 지도 중심을 부드럽게 이동시킵니다
+            // 만약 이동할 거리가 지도 화면보다 크면 부드러운 효과 없이 이동합니다
+            map.panTo(moveLatLon);
+        }
+	</script>
+</body>
+</html>
