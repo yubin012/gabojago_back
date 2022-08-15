@@ -21,6 +21,7 @@ import mapapp.views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('maps/', mapapp.views.maps, name='maps'),
+    path('map/', mapapp.views.map, name='map'),
 
 
 ]
